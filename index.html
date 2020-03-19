@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type"    content="text/html; charset=utf-8">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"/>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans|PT+Sans+Narrow&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    
+    <title>
+      Annuaire des associations
+    </title>
+    <style>
+      html {
+        background-color: #f6f9fc;
+      }
+      body {
+        font-color: #4a4a4a;
+        font-family: 'PT Sans', sans-serif;
+      }
+      h1 {
+        font-color: #363636;
+        font-family: 'PT Sans Narrow', sans-serif;
+        font-style: 'bold';
+      }
+      #mapid {
+        height: 600px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="column has-text-centered">
+        <p class="title"><span style="font-size: 4.5rem">🍋</span></p>
+        <p class="title"><span style="font-size: 4.5rem">Trouvez un moyen de redistribuer vos excédents alimentaires</span></p>
+        <p class="subtitle is-3 has-text-grey">Annuaire des associations </p>
+          <p class="menu-label">Rejoigner la communaute <span class="has-text-link is-size-4">1978</span> </p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="column has-text-centered">
+        <div id="twitter">
+          <a class="twitter-timeline" data-width="220" data-height="300" data-theme="light" href="https://twitter.com/JoinEasilys?ref_src=twsrc%5Etfw">Tweets by JoinEasilys</a>
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+      </div>
+    </div>
+      <div id="mapid">
+      </div>
+    <script>
+       var map = L.map('mapid', {
+          center: [46.969469, 2.599412],
+          zoom: 7
+      });
+      L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?{foo}', {foo: 'bar'}).addTo(map);
+      L.marker([46.969469, 2.599412]).addTo(map)
+        .bindPopup('Association<br/> Tel : 0201010101')
+        .openPopup();
+    </script>
+  </body>
+</html>
